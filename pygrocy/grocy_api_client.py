@@ -469,9 +469,9 @@ class TaskResponse(object):
 
 class GrocyApiClient(object):
     def __init__(
-        self, base_url, api_key, port: int = DEFAULT_PORT_NUMBER, path: str = '', verify_ssl=True
+        self, base_url, api_key, port: int = DEFAULT_PORT_NUMBER, base_path: str = '', verify_ssl=True
     ):
-        self._base_url = "{}:{}{}/api/".format(base_url, port, path)
+        self._base_url = "{}:{}{}/api/".format(base_url, port, base_path)
         self._api_key = api_key
         self._verify_ssl = verify_ssl
         if self._api_key == "demo_mode":

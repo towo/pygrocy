@@ -28,9 +28,9 @@ from .grocy_api_client import (
 
 class Grocy(object):
     def __init__(
-        self, base_url, api_key, port: int = DEFAULT_PORT_NUMBER, verify_ssl=True
+        self, base_url, api_key, port: int = DEFAULT_PORT_NUMBER, base_path: str = '', verify_ssl=True
     ):
-        self._api_client = GrocyApiClient(base_url, api_key, port, verify_ssl)
+        self._api_client = GrocyApiClient(base_url, api_key, port, base_path, verify_ssl)
 
     def stock(self) -> List[Product]:
         raw_stock = self._api_client.get_stock()
